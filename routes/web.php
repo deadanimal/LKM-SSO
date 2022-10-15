@@ -23,3 +23,5 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/different-account', [HomeController::class, 'getDifferentAccount'])->name('different-account');
+
+Route::get('/test', [HomeController::class, 'test']);

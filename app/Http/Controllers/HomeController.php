@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserWordpress;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -35,5 +36,10 @@ class HomeController extends Controller
         Session::put("url.intended", $request->current_url);
 
         return redirect("/login");
+    }
+
+    public function test()
+    {
+        dd(UserWordpress::first());
     }
 }
