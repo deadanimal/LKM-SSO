@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
  */
 //scopes kalau banyak scope
-Route::middleware('auth:api', 'scope:view-user')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api', 'scope:view-user')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::middleware('auth:api', 'scope:view-user')->get('/user/get', [UserController::class, 'get']);
 
 Route::middleware('auth:api')->get('/logmeout', function (Request $request) {
     $user = $request->user();
