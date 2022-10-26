@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\UserWordpress;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -65,16 +64,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $userWp = UserWordpress::create([
-            'user_login' => $data['name'],
-            'user_pass' => md5($data['password']),
-            'user_nicename' => $data['name'],
-            'user_email' => $data['email'],
-            "user_url" => "http://lembaga-koko.prototype.com.my",
-            "user_registered" => now(),
-            "user_status" => 0,
-            "display_name" => $data['name'],
-        ]);
+        // $userWp = UserWordpress::create([
+        //     'user_login' => $data['name'],
+        //     'user_pass' => md5($data['password']),
+        //     'user_nicename' => $data['name'],
+        //     'user_email' => $data['email'],
+        //     "user_url" => "http://lembaga-koko.prototype.com.my",
+        //     "user_registered" => now(),
+        //     "user_status" => 0,
+        //     "display_name" => $data['name'],
+        // ]);
 
         $userLocal = User::create([
             'name' => $data['name'],
