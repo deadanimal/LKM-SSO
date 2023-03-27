@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/different-account', [HomeController::class, 'getDifferentAccount'])->name('different-account');
 
 Route::get('/test', [HomeController::class, 'test']);
+
+Route::get('/php',[ApiController::class,'php']);

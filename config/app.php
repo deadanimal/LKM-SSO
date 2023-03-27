@@ -195,6 +195,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        LaravelPdoOdbc\ODBCServiceProvider::class,
+       // Yajra\Oci8\Oci8ServiceProvider::class,
+
     ],
 
     /*

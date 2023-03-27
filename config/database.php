@@ -62,23 +62,6 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-        'wp' => [
-            'driver' => 'mysql',
-            'host' => '128.199.170.19',
-            'port' => '3306',
-            'database' => "lembagakoko",
-            'username' => 'developer',
-            'password' => 'PabloEscobar',
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
-        ],
 
         'pgsql' => [
             'driver' => 'pgsql',
@@ -95,20 +78,63 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        'sqlsrv' => [
+        'hharian' => [
             'driver' => 'sqlsrv',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => '192.168.1.77\mcbcloud',
+            // 'port' => '1433',
+            'database' => 'hharian',
+            'username' => "app_mycocoa",
+            'password' => "LD2022",
+            'charset' => 'utf8',
+            'prefix' => '',
+            // 'encrypt' => 'yes',
+            'trust_server_certificate' => true,
+        ],
+        'webstat' => [
+            'driver' => 'sqlsrv',
+            'host' => '192.168.1.77\mcbcloud',
+            // 'port' => '1433',
+            'database' => 'webstat',
+            'username' => "app_mycocoa",
+            'password' => "LD2022",
+            'charset' => 'utf8',
+            'prefix' => '',
+            // 'encrypt' => 'yes',
+            'trust_server_certificate' => true,
+        ],
+
+        'sqlsrv_old' => [
+            'driver' => 'sqlsrv',
+            //'url' =>'192.168.1.14',
+            'host' => '192.168.1.14',
+            'port' => '1433',
+            'database' => 'hharian',
+            'username' => "usr_mycocoaviewer",
+            'password' => "LD2022",
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
+
+        'odbc' => [
+            'driver' => 'sqlsrv',
+            'odbc' => true,
+            'dsn' => 'odbc:Driver=FreeTDS;SERVER=192.168.1.14;DATABASE=hharian;UID=usr_mycocoaviewer;PWD=LD2022',
+            'host' => env('DB_HOST', 'localhost'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+        ],
+
+        // 'odbc' => [
+        //     'driver' => 'odbc',
+        //     'dsn' => 'Driver=sqlrv;Server=192.168.1.14;Port=443;',
+        //     'database'=>'hharian',
+        //     'username' => 'usr_mycocoaviewer',
+        //     'password' => 'LD2022'
+        // ],
 
     ],
 
